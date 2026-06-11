@@ -1,0 +1,18 @@
+[package]
+name = "telemetry_gui"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+telemetry_types = { path = "../telemetry_types" }
+xbee_rust_modem_library = { path = "../../xbee_rust_modem_library" }
+serialport = "4.8"
+postcard = { version = "1.1", features = ["use-std"] }
+
+# UI: same stack as the onboard dashboard (solar_rust/src/dashboard.rs)
+iced = { version = "0.13.1", features = ["canvas", "tokio"] }
+
+# Needed by the dbc-codegen message modules reused from solar_rust via #[path]
+bitvec = "1.0.1"
+embedded-can = "0.4.1"
+defmt = "1.0.1"

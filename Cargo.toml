@@ -1,0 +1,17 @@
+[workspace]
+resolver = "3"
+members = [
+    "solar_rust",
+    "telemetry_types",
+    "can_xbee_bridge",
+    "telemetry_receiver",
+    "telemetry_gui",
+]
+# solar_rust and can_xbee_bridge need socketcan/nix, which only compile on
+# Linux. A bare `cargo build`/`cargo test` on a dev mac builds the portable
+# crates; on the Pi use `cargo build --workspace` (or -p <crate>).
+default-members = [
+    "telemetry_types",
+    "telemetry_receiver",
+    "telemetry_gui",
+]

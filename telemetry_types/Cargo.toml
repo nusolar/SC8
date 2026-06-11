@@ -1,0 +1,13 @@
+[package]
+name = "telemetry_types"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+heapless = { version = "0.8", features = ["serde"] }
+
+[dev-dependencies]
+postcard = { version = "1.1", features = ["use-std"] }
+aes-gcm = "0.10.3"
+xbee_rust_modem_library = { path = "../../xbee_rust_modem_library" }

@@ -1,0 +1,12 @@
+[package]
+name = "can_xbee_bridge"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+telemetry_types = { path = "../telemetry_types" }
+xbee_rust_modem_library = { path = "../../xbee_rust_modem_library" }
+socketcan = "3.3"
+serialport = "4.8"
+postcard = { version = "1.1", features = ["use-std"] }
+heapless = { version = "0.8", features = ["serde"] }
